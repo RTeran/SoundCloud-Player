@@ -239,11 +239,11 @@ aws4@^1.2.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.5.0.tgz#0a29ffb79c31c9e712eeb087e8e7a64b4a56d755"
 
-axios@^0.15.3:
-  version "0.15.3"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.15.3.tgz#2c9d638b2e191a08ea1d6cc988eadd6ba5bdc053"
+axios@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.14.0.tgz#40f24f2f4e913b9faa43d3a7b2e40ab8729afa90"
   dependencies:
-    follow-redirects "1.0.0"
+    follow-redirects "0.0.7"
 
 babel-code-frame@^6.16.0, babel-code-frame@^6.20.0:
   version "6.20.0"
@@ -2431,11 +2431,12 @@ fleximap@0.9.x:
   version "0.9.10"
   resolved "https://registry.yarnpkg.com/fleximap/-/fleximap-0.9.10.tgz#1aa50ff6a8fea0037cc378e38ddacc091025ac10"
 
-follow-redirects@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.0.0.tgz#8e34298cbd2e176f254effec75a1c78cc849fd37"
+follow-redirects@0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-0.0.7.tgz#34b90bab2a911aa347571da90f22bd36ecd8a919"
   dependencies:
     debug "^2.2.0"
+    stream-consume "^0.1.0"
 
 for-in@^0.1.5:
   version "0.1.6"
@@ -3902,13 +3903,13 @@ lodash@^3.1.0, lodash@^3.10.1, lodash@^3.2.0, lodash@^3.3.1, lodash@^3.5.0, loda
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1, lodash@^4.8.0:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
-
-lodash@~4.11.1:
+lodash@^4.0.0, lodash@^4.11.1, lodash@^4.2.0, lodash@^4.2.1, lodash@~4.11.1:
   version "4.11.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.11.2.tgz#d6b4338b110a58e21dae5cebcfdbbfd2bc4cdb3b"
+
+lodash@^4.14.0, lodash@^4.17.2, lodash@^4.3.0, lodash@^4.6.1, lodash@^4.8.0:
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
 log-symbols@^1.0.1:
   version "1.0.2"
@@ -4720,6 +4721,10 @@ react-native-scrollable-tab-view@^0.7.0:
   resolved "https://registry.yarnpkg.com/react-native-scrollable-tab-view/-/react-native-scrollable-tab-view-0.7.0.tgz#c8fe713530766f8fe9364155a5445a5964a99f77"
   dependencies:
     react-timer-mixin "^0.13.3"
+
+react-native-search-bar@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-search-bar/-/react-native-search-bar-3.0.0.tgz#973b38276d06e1731ed52121e94f54b9aed2bfab"
 
 react-native-vector-icons@2.0.x:
   version "2.0.3"
@@ -5594,6 +5599,10 @@ stream-combiner2@~1.0.0:
   dependencies:
     duplexer2 "~0.0.2"
     through2 "~0.5.1"
+
+stream-consume@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/stream-consume/-/stream-consume-0.1.0.tgz#a41ead1a6d6081ceb79f65b061901b6d8f3d1d0f"
 
 stream-counter@~0.2.0:
   version "0.2.0"

@@ -33,6 +33,7 @@
 		506569E397FE4D3FB1B5F248 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADA6FAD31A8A497A8F19D800 /* Octicons.ttf */; };
 		00A2037B33C94EC4A42BB475 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E52E95413E324666B2D01E3D /* Zocial.ttf */; };
 		FD3B119852BE4C1EA7B3C43A /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB90BCC7A54172B67C748F /* libRNI18n.a */; };
+		FC7A8548D64A452E853D7534 /* libRNSearchBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE39F9CB31242A48C2C03C7 /* libRNSearchBar.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -255,6 +256,8 @@
 		E52E95413E324666B2D01E3D /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		974A219360D64003A94884E6 /* RNI18n.xcodeproj */ = {isa = PBXFileReference; name = "RNI18n.xcodeproj"; path = "../node_modules/react-native-i18n/RNI18n.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		41BB90BCC7A54172B67C748F /* libRNI18n.a */ = {isa = PBXFileReference; name = "libRNI18n.a"; path = "libRNI18n.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		F09A81F42E084DAA9B1DD662 /* RNSearchBar.xcodeproj */ = {isa = PBXFileReference; name = "RNSearchBar.xcodeproj"; path = "../node_modules/react-native-search-bar/RNSearchBar.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		DFE39F9CB31242A48C2C03C7 /* libRNSearchBar.a */ = {isa = PBXFileReference; name = "libRNSearchBar.a"; path = "libRNSearchBar.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +286,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				9E0D6E1B643B45A08D245BDD /* libRNVectorIcons.a in Frameworks */,
 				FD3B119852BE4C1EA7B3C43A /* libRNI18n.a in Frameworks */,
+				FC7A8548D64A452E853D7534 /* libRNSearchBar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +433,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				725861F21F0546EFAD29AFCB /* RNVectorIcons.xcodeproj */,
 				974A219360D64003A94884E6 /* RNI18n.xcodeproj */,
+				F09A81F42E084DAA9B1DD662 /* RNSearchBar.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -879,6 +884,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -895,6 +901,7 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundCloudPlayer.app/SoundCloudPlayer";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
