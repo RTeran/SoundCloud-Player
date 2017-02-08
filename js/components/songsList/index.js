@@ -20,7 +20,6 @@ class SongsList extends Component {
     }
 
     renderItem(item) {
-        console.log(item);
         return (
             <View
                 style={styles.listItem}>
@@ -35,7 +34,6 @@ class SongsList extends Component {
     render() {
         const { songs } = this.props
         // TODO: make loading indicator
-        // if (songs.length === 0) return null
 
         const dataSource = this.dataSource.cloneWithRows(songs);
 

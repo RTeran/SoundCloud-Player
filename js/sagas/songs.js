@@ -15,7 +15,6 @@ function* fetchTracks(action) {
     const songs = yield call(search, action.text);
     yield put({ type: SEARCH_SONGS_SUCCEEDED, songs: songs.data });
   } catch (e) {
-    console.log(e);
     yield put({ type: SEARCH_SONGS_FAILED, message: e });
   }
 }
