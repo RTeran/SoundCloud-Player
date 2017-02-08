@@ -31,11 +31,15 @@ class Tabs extends Component {
         </ScrollView>
 
         <ScrollView tabLabel="Queue">
-          <Search />
+            <View>
+              <Text>Queue</Text>
+            </View>
         </ScrollView>
 
         <ScrollView tabLabel="About">
-          <Search />
+            <View>
+              <Text>About</Text>
+            </View>
         </ScrollView>
       </ScrollableTabView>
     );
