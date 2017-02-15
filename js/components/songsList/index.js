@@ -2,7 +2,8 @@
 import React, { Component } from 'react'
 import { connect }          from 'react-redux'
 import {
-    Text, ListView
+    Text, ListView,
+    ActivityIndicator
 }                           from 'react-native'
 import I18n                 from 'react-native-i18n'
 import myTheme              from '../../themes/base-theme'
@@ -30,12 +31,21 @@ class SongsList extends Component {
         )
     }
 
+    loading(isActive) {
+        return (
+            <ActivityIndicator
+                animating={isActive}
+                style={styles.loading}
+                size="large"/>
+        )
+    }
 
     render() {
-        const { songs } = this.props
-        // TODO: make loading indicator
+        const { items, isFetching } = this.props
 
-        const dataSource = this.dataSource.cloneWithRows(songs);
+        if (isFetching) return this.loading(isFetching)
+
+        const dataSource = this.dataSource.cloneWithRows(items);
 
         return (
             <ListView
@@ -53,7 +63,7 @@ const NUMBER_OF_LINES = 2;
 
 
 function mapStateToProps(state) {
-    return state.songs
+    return { items, isFetching } = state.songs
 }
 
 function bindAction(dispatch) {

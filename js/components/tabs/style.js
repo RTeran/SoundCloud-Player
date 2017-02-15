@@ -6,7 +6,6 @@ module.exports = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingBottom: 10,
     backgroundColor: myTheme.light
   },
   tabs: {

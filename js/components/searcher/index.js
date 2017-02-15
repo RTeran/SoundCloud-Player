@@ -21,8 +21,12 @@ class Searcher extends Component {
   filter(text) {
     const { searchSongs } = this.props
     searchSongs(text)
+    this.refs.searchBar.blur();
   }
 
+  blur() {
+    this.refs.searchBar.blur();
+  }
 
   render() {
     return (

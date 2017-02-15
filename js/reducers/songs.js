@@ -1,12 +1,14 @@
 import {
+  SEARCHING_SONGS,
   SEARCH_SONGS_SUCCEEDED,
   SEARCH_SONGS_FAILED
 } from '../actions/const'
 
 const initialState = {
-  songs: [],
+  items: [],
   queue: [],
   playing: null,
+  isFetching: false
 };
 
 function songs(state = initialState, action) {
@@ -14,12 +16,20 @@ function songs(state = initialState, action) {
     case SEARCH_SONGS_SUCCEEDED:
       return {
         ...state,
-        songs: action.songs,
+        items: action.items,
+        isFetching: false
       }
     case SEARCH_SONGS_FAILED:
       return {
         ...state,
         message: action.message,
+        isFetching: false
+      }
+    case SEARCHING_SONGS:
+    console.log(state.items);
+      return {
+        ...state,
+        isFetching: (state.items.length > 0) ? false : action.isFetching
       }
     default:
       return state

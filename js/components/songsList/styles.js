@@ -25,5 +25,11 @@ module.exports = StyleSheet.create({
     description: {
         fontSize: 14,
         color: myTheme.secondaryText
+    },
+    loading: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 8,
+        height: 80
     }
 });

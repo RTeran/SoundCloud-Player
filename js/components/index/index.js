@@ -7,8 +7,8 @@ import myTheme                from '../../themes/base-theme';
 import Tabs                   from '../tabs';
 import  {
   Container, Content,
-  Text, Header, Button,
-  Icon, Title
+  Header, Title,
+  Body
 } from 'native-base';
 
 
@@ -29,14 +29,16 @@ class Index extends Component {
 
   render() {
     return (
-      <Container theme={ myTheme }>
-        <Content>
-          <Header>
-            <Title>{ I18n.t('home.title') }</Title>
-          </Header>
-          <Tabs />
-        </Content>
-      </Container>
+        <Container theme={ myTheme }>
+            <Content>
+                <Header>
+                    <Body>
+                        <Title>{ I18n.t('home.title') }</Title>
+                    </Body>
+                </Header>
+                <Tabs />
+            </Content>
+        </Container>
     );
   }
 }
