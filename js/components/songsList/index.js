@@ -8,7 +8,6 @@ import {
 import I18n                 from 'react-native-i18n'
 import myTheme              from '../../themes/base-theme'
 import SongItem             from './songItem'
-import { searchSongs }      from '../../actions/songs'
 import styles               from './styles'
 
 class SongsList extends Component {
@@ -43,6 +42,8 @@ class SongsList extends Component {
     render() {
         const { items, isFetching } = this.props
 
+        // TODO: Create empty state
+
         if (isFetching) return this.loading(isFetching)
 
         const dataSource = this.dataSource.cloneWithRows(items);
@@ -66,10 +67,4 @@ function mapStateToProps(state) {
     return { items, isFetching } = state.songs
 }
 
-function bindAction(dispatch) {
-    return {
-        searchSongs: (text) => dispatch( searchSongs(text) )
-    }
-}
-
-export default connect(mapStateToProps, bindAction)(SongsList);
+export default connect(mapStateToProps, null)(SongsList);

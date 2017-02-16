@@ -2,16 +2,28 @@
 import React, { Component } from 'react'
 import { connect }          from 'react-redux'
 import {
-  View, Text, Image,
-  TouchableOpacity
+	View, Text, Image,
+	TouchableOpacity
 }                           from 'react-native'
 import { Button }           from 'native-base'
 import Icon                 from 'react-native-vector-icons/MaterialIcons'
 import I18n                 from 'react-native-i18n'
 import myTheme              from '../../../themes/base-theme'
 import styles               from './style'
+import {
+    playSong
+}                           from '../../../actions/player'
 
 class SongItem extends Component {
+
+    handlePlayButton(song) {
+        const { playSong } = this.props
+        playSong(song)
+    }
+
+    handleAddPlaylistButton(song) {
+        console.log(song);
+    }
 
     fromUser(user) {
         return `${FROM} ${user}`
@@ -41,12 +53,16 @@ class SongItem extends Component {
                     </Text>
                 </View>
                 <View style={styles.buttons}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity
+                        onPress={() => this.handlePlayButton(item)}
+                        style={styles.button}>
                         <Icon
                             name='play-arrow'
                             style={styles.icon} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity
+                        onPress={() => this.handleAddPlaylistButton(item)}
+                        style={styles.button}>
                         <Icon
                             name='playlist-add'
                             style={styles.icon} />
@@ -64,4 +80,10 @@ const NUMBER_OF_LINES_TITLE = 2
 const NUMBER_OF_LINES_USER  = 1
 
 
-export default SongItem;
+function bindAction(dispatch) {
+    return {
+        playSong: song => dispatch( playSong(song) )
+    }
+}
+
+export default connect(null, bindAction)(SongItem);

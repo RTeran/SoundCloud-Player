@@ -5,8 +5,8 @@ import {
   TouchableOpacity
 }                           from 'react-native';
 
-import myTheme               from '../../themes/base-theme';
-import styles               from './style'
+import myTheme              from '../../themes/base-theme';
+import styles               from './styles'
 
 class DefaultTabBar extends Component {
   static propTypes = {
@@ -57,7 +57,6 @@ class DefaultTabBar extends Component {
     });
 
     return (
-      <View style={styles.tabsShadow}>
         <View style={styles.tabs}>
           {
             this.props.tabs.map((name, page) => {
@@ -67,7 +66,6 @@ class DefaultTabBar extends Component {
           }
           <Animated.View style={[tabUnderlineStyleWidth, { left }, styles.tabUnderlineStyle ]} />
         </View>
-      </View>
     );
   }
 }

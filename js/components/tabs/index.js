@@ -11,6 +11,7 @@ import ScrollableTabView,
   { ScrollableTabBar }        from 'react-native-scrollable-tab-view';
 import DefaultTabBar          from './defaultTabBar'
 import Search                 from '../search'
+import Player                 from '../player'
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -18,34 +19,38 @@ const width = Dimensions.get('window').width;
 class Tabs extends Component {
 
   render() {
-    return (
-      <ScrollableTabView
-        style={{ height: height - TAB_HEIGHT }}
-        initialPage={0}
-        renderTabBar={() => <DefaultTabBar />}
-        tabBarPosition='bottom'
-        tabBarTextStyle={{flex: 1}}
-      >
-        <ScrollView tabLabel="Search">
-          <Search />
-        </ScrollView>
+      return (
+          <View>
+              <ScrollableTabView
+                  style={{ height: height - (TAB_HEIGHT + PLAYER_HEIGHT) }}
+                  initialPage={0}
+                  renderTabBar={() => <DefaultTabBar />}
+                  tabBarPosition='top'
+                  tabBarTextStyle={{flex: 1}}
+              >
+                  <ScrollView tabLabel="Search">
+                      <Search />
+                  </ScrollView>
 
-        <ScrollView tabLabel="Queue">
-            <View>
-              <Text>Queue</Text>
-            </View>
-        </ScrollView>
+                  <ScrollView tabLabel="Queue">
+                      <View>
+                          <Text>Queue</Text>
+                      </View>
+                  </ScrollView>
 
-        <ScrollView tabLabel="About">
-            <View>
-              <Text>About</Text>
-            </View>
-        </ScrollView>
-      </ScrollableTabView>
-    );
+                  <ScrollView tabLabel="About">
+                      <View>
+                          <Text>About</Text>
+                      </View>
+                  </ScrollView>
+              </ScrollableTabView>
+              <Player />
+          </View>
+      );
   }
 }
 
 const TAB_HEIGHT = 63
+const PLAYER_HEIGHT = 63
 
 export default Tabs

@@ -1,6 +1,5 @@
 
 import React, { Component }   from 'react';
-import Platform               from 'react-native';
 import { connect }            from 'react-redux';
 import I18n                   from 'react-native-i18n';
 import myTheme                from '../../themes/base-theme';
@@ -33,7 +32,7 @@ class Index extends Component {
             <Content>
                 <Header>
                     <Body>
-                        <Title>{ I18n.t('home.title') }</Title>
+                        <Title style={{color: myTheme.primary}}>{ I18n.t('home.title') }</Title>
                     </Body>
                 </Header>
                 <Tabs />

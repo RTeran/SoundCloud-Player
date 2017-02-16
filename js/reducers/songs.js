@@ -26,7 +26,6 @@ function songs(state = initialState, action) {
         isFetching: false
       }
     case SEARCHING_SONGS:
-    console.log(state.items);
       return {
         ...state,
         isFetching: (state.items.length > 0) ? false : action.isFetching
