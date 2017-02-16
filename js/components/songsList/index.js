@@ -19,17 +19,6 @@ class SongsList extends Component {
         })
     }
 
-    renderItem(item) {
-        return (
-            <View
-                style={styles.listItem}>
-                <Text>
-                    {item.title}
-                </Text>
-            </View>
-        )
-    }
-
     loading(isActive) {
         return (
             <ActivityIndicator
@@ -51,7 +40,7 @@ class SongsList extends Component {
         return (
             <ListView
                 dataSource={dataSource}
-                renderRow={item => <SongItem item={item}/>}
+                renderRow={item => <SongItem item={item} />}
                 enableEmptySections={true}
                 style={styles.listView}>
             </ListView>

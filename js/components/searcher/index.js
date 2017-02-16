@@ -21,18 +21,13 @@ class Searcher extends Component {
   filter(text) {
     const { searchSongs } = this.props
     searchSongs(text)
-    this.refs.searchBar.blur();
-  }
-
-  blur() {
-    this.refs.searchBar.blur();
   }
 
   render() {
     return (
       <View>
         <SearchBar
-          ref='searchBar'
+          ref={this.props.searchBarRef}
           placeholder={I18n.t('app.search')}
           onChangeText={(text) => this.filter(text)}
         />
