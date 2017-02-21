@@ -14,22 +14,22 @@ import SongList             from '../songsList'
 
 class Search extends Component {
 
-  searchBarBlur(e) {
-    return this.SearchBar.blur() || null
-  }
+    searchBarBlur() {
+        return this.SearchBar.blur() || null
+    }
 
-  render() {
-    return (
-      <View>
-        <Searcher searchBarRef={ SearchBar => this.SearchBar = SearchBar } />
-        <TouchableWithoutFeedback onPress={ () => this.searchBarBlur() }>
+    render() {
+        return (
             <View>
-                <SongList />
+                <Searcher searchBarRef={ SearchBar => this.SearchBar = SearchBar } />
+                <TouchableWithoutFeedback onPress={ () => this.searchBarBlur() }>
+                    <View>
+                        <SongList />
+                    </View>
+                </TouchableWithoutFeedback>
             </View>
-        </TouchableWithoutFeedback>
-      </View>
-    )
-  }
+        )
+    }
 }
 
 export default Search

@@ -4,7 +4,7 @@ import { AsyncStorage } from 'react-native';
 import devTools         from 'remote-redux-devtools';
 import createSagaMiddleware from 'redux-saga';
 import reducers         from './reducers';
-import sagas            from './sagas';
+import rootSaga            from './sagas';
 import {
   createStore, applyMiddleware,
   compose
@@ -20,7 +20,7 @@ export default function configureStore(onCompletion:()=>void):any {
     })
   );
   const store = createStore(reducers, enhancer);
-  sagaMiddleware.run(sagas);
+  sagaMiddleware.run(rootSaga);
   persistStore(store, { blacklist: ['songs'], storage: AsyncStorage }, onCompletion);
 
   return store;

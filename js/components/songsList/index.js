@@ -51,9 +51,6 @@ class SongsList extends Component {
 
 const NUMBER_OF_LINES = 2;
 
-
-function mapStateToProps(state) {
-    return { items, isFetching } = state.songs
-}
+const mapStateToProps = state => ({ items, isFetching } = state.songs)
 
 export default connect(mapStateToProps, null)(SongsList);

@@ -1,18 +1,24 @@
 import {
+  INIT_PLAYER,
   PLAY_SONG,
   PAUSE_SONG
 } from './const'
 
-
-export const playSong = song => {
+export const initPlayer = song => {
   return {
-    type: PLAY_SONG,
+    type: INIT_PLAYER,
     song
+  }
+}
+
+export const playSong = () => {
+  return {
+    type: PLAY_SONG
   }
 }
 
 export const pauseSong = () => {
   return {
-    type: PLAY_SONG
+    type: PAUSE_SONG
   }
 }

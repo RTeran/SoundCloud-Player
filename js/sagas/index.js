@@ -1,4 +1,10 @@
+import { takeEvery }  from 'redux-saga';
+import searchSongs    from './songs'
+import { player }     from './player'
 
-import searchSongs          from './songs'
-
-export default searchSongs
+export default function* rootSaga() {
+  yield [
+    searchSongs(),
+    ...player
+  ]
+}

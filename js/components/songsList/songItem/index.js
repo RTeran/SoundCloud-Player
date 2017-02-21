@@ -6,23 +6,26 @@ import {
 	TouchableOpacity
 }                           from 'react-native'
 import { Button }           from 'native-base'
+import ImageSong            from '../../image-song'
 import Icon                 from 'react-native-vector-icons/MaterialIcons'
 import I18n                 from 'react-native-i18n'
 import myTheme              from '../../../themes/base-theme'
 import styles               from './style'
 import {
-    playSong
+    initPlayer
 }                           from '../../../actions/player'
 
 class SongItem extends Component {
 
-    handlePlayButton(song) {
-        const { playSong } = this.props
-        playSong(song)
+    handlePlayButton(item) {
+        const { initPlayer, song } = this.props
+        if (song && (song.id === item.id)) return null
+
+        return initPlayer(item)
     }
 
-    handleAddPlaylistButton(song) {
-        console.log(song);
+    handleAddPlaylistButton(item) {
+        console.log(item);
     }
 
     fromUser(user) {
@@ -34,10 +37,7 @@ class SongItem extends Component {
         const { artwork_url } = item
         return (
             <View style={styles.item}>
-                <Image
-                    style={styles.image}
-                    source={{uri: artwork_url || DEFAULT_BACKGROUND}}
-                />
+                <ImageSong image={artwork_url} />
                 <View style={styles.info}>
                     <Text
                       style={styles.title}
@@ -74,16 +74,14 @@ class SongItem extends Component {
 }
 
 
-const DEFAULT_BACKGROUND    = 'https://ih0.redbubble.net/image.106738791.5856/flat,800x800,075,t.jpg'
 const FROM                  = 'from'
 const NUMBER_OF_LINES_TITLE = 2
 const NUMBER_OF_LINES_USER  = 1
 
+const mapStateToProps = state => ({ song } = state.player)
 
-function bindAction(dispatch) {
-    return {
-        playSong: song => dispatch( playSong(song) )
-    }
-}
+const bindAction = dispatch => ({
+    initPlayer: song => dispatch( initPlayer(song) )
+})
 
-export default connect(null, bindAction)(SongItem);
+export default connect(mapStateToProps, bindAction)(SongItem);

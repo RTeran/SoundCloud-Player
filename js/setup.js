@@ -15,6 +15,7 @@ function setup():React.Component {
         isLoading: false,
         store: configureStore(() => this.setState({ isLoading: false })),
       };
+	  console.disableYellowBox = true;
     }
 
     render() {

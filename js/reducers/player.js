@@ -1,4 +1,5 @@
 import {
+  ACTIVE_SONG,
   PLAY_SONG,
   PAUSE_SONG
 } from '../actions/const'
@@ -11,18 +12,27 @@ const initialState = {
 
 function player(state = initialState, action) {
   switch (action.type) {
+
+    case ACTIVE_SONG:
+      return {
+        ...state,
+        song: action.song
+      }
+
     case PLAY_SONG:
       return {
         ...state,
-        song: action.song,
-        playing: true
+        playing: true,
+        paused: false
       }
+
     case PAUSE_SONG:
       return {
         ...state,
         playing: false,
         paused: true
       }
+
     default:
       return state
   }

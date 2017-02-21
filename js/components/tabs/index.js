@@ -11,7 +11,7 @@ import ScrollableTabView,
   { ScrollableTabBar }        from 'react-native-scrollable-tab-view';
 import DefaultTabBar          from './defaultTabBar'
 import Search                 from '../search'
-import Player                 from '../player'
+import PlayerSong             from '../player-song'
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -44,7 +44,7 @@ class Tabs extends Component {
                       </View>
                   </ScrollView>
               </ScrollableTabView>
-              <Player />
+              <PlayerSong />
           </View>
       );
   }

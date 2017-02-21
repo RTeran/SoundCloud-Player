@@ -15,31 +15,30 @@ import {
 class Searcher extends Component {
 
   constructor(props) {
-    super(props)
+      super(props)
   }
 
   filter(text) {
-    const { searchSongs } = this.props
-    searchSongs(text)
+      const { searchSongs } = this.props
+      searchSongs(text)
   }
 
   render() {
-    return (
-      <View>
-        <SearchBar
-          ref={this.props.searchBarRef}
-          placeholder={I18n.t('app.search')}
-          onChangeText={(text) => this.filter(text)}
-        />
-      </View>
-    )
+      return (
+          <View style={{backgroundColor: myTheme.backgroundContentCards}}>
+              <SearchBar
+                  ref={this.props.searchBarRef}
+                  placeholder={I18n.t('app.search')}
+                  onChangeText={(text) => this.filter(text)}
+                  hideBackground={true}
+              />
+          </View>
+      )
   }
 }
 
-function bindAction(dispatch) {
-    return {
-        searchSongs: (text) => dispatch( searchSongs(text) )
-    }
-}
+const bindAction = dispatch => ({
+    searchSongs: song => dispatch( searchSongs(song) )
+})
 
 export default connect(null, bindAction)(Searcher);
